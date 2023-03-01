@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+root to: "public/homes#top"
+
 # 顧客用 
   devise_for :customers, skip: [:passwords],controllers: {
     registrations: "public/registrations",
