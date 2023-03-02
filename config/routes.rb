@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-root to: "public/homes#top"
 
 # 顧客用 
   devise_for :customers, skip: [:passwords],controllers: {
@@ -13,4 +12,24 @@ root to: "public/homes#top"
      sessions: "admin/sessions"
    }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  scope module: :public do
+    root to: "homes#top"
+    get "/about" =>"homes#about",as: 'about'
+    get "/customers/mypage" =>"customers#mypage",as: 'show'
+    get "/customers/information/edit" =>"customers#information",as: 'edit'
+    resources :addresses
+    resources :orders, only: [:show, :index, :new, :create]
+    resources :cart_items, only: [:index, :create]
+  end
+
+  namespace :admin do
+    resources :items
+    resources :customers
+    resources :homes
+    resources :genres
+    resources :oeders
+    resources :oeders_details
+  end
+
 end
