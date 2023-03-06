@@ -12,11 +12,17 @@ class Admin::ItemsController < ApplicationController
     end
     
     def show
+      @item = Item.find(params[:id])
     end
     
     def edit
     end
     
     def update
+    end
+    
+  private
+    def item_params
+      params.require(:item).permit(:image, :name, :introduction, :price)
     end
 end

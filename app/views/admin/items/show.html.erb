@@ -1,0 +1,20 @@
+<h1>商品紹介</h1>
+
+<%= image_tag @item.image %>
+
+<p>商品名</p>
+<%= link_to admin_items_path@item.name) %>
+
+<p>商品説明</p>
+<%= link_to admin_items_path(@item.introduction) %>
+
+<p>ジャンル</p>
+<%= link_to admin_items_path(@item.genre_id) %>
+
+<p>税込価格(税抜価格)</p>
+<%= link_to admin_items_path(@item.price) %>
+
+<p>販売ステータス</p>
+<%= link_to admin_items_path(@item.is_active) %>
+
+<%= link_to "編集する" edit_admin_items_path(@items.id) %>
