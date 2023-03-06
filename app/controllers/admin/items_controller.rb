@@ -5,6 +5,7 @@ class Admin::ItemsController < ApplicationController
     end
     
     def new
+      @genres = Genre.all
     end
     
     def create

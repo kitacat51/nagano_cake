@@ -2,18 +2,19 @@
 
 <%= form_with model: @item,url: admin_items_path do |f| %>
 <p>商品画像</p>
-<%#= f.file_field :image %>
+<%= f.file_field :image %>
 
 <p>商品名</p>
-<%#= f.text_field %>
+<%= f.text_field :name %>
 
 <p>商品説明</p>
-<%#= f.text_area %>
+<%= f.text_area :introduction %>
 
 <p>ジャンル</p>
+<%= f.collection_select(:genre_id, @genres, :id, :neme, prompt: "選択してください") %>
 
 <p>税抜価格</p>
-<%#= f.text_field %>
+<%= f.text_field :price %>円
 
 <p>販売ステータス</p>
 <%= f.radio_button :is_active, :true %>販売中
