@@ -14,7 +14,7 @@ class Admin::ItemsController < ApplicationController
       if @item.save
         redirect_to admin_items_path(@item.id)
       else
-        render :index
+        render :admin_items_path
       end
     end
     

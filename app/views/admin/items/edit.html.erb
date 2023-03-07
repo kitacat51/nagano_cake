@@ -1,6 +1,6 @@
 <h1>商品編集</h1>
 
-  <%= form_with model: @item do |f| %>
+  <%= form_with model: @item,url: admin_items_path(@item.id),method: :patch do |f| %>
   
  
      <p>商品画像</p>
@@ -13,7 +13,7 @@
      <%= f.text_area :introduction %>
      
      <p>ジャンル</p>
-     <%= f.collection_select(:genre_id, @genres, :id, :neme, prompt: "--選択してください--") %>
+     <%#= f.collection_select(:genre_id, @genres, :id, :neme, prompt: "--選択してください--") %>
      
      <p>税抜価格</p>
      <%= f.text_field :price %>円

@@ -3,18 +3,20 @@
 <%= image_tag @item.image %>
 
 <p>商品名</p>
-<%= link_to admin_items_path@item.name) %>
+<%= @item.name %>
 
 <p>商品説明</p>
-<%= link_to admin_items_path(@item.introduction) %>
+<%= @item.introduction %>
 
 <p>ジャンル</p>
-<%= link_to admin_items_path(@item.genre_id) %>
+<%= @item.genre_id %>
 
 <p>税込価格(税抜価格)</p>
-<%= link_to admin_items_path(@item.price) %>
+<%= @item.price %>円
 
 <p>販売ステータス</p>
-<%= link_to admin_items_path(@item.is_active) %>
+<%= @item.is_active %>
+<!--販売ステータスがfalseのままになっている-->
 
-<%= link_to "編集する" edit_admin_items_path(@items.id) %>
+
+<%= link_to "編集する",edit_admin_item_path(@item.id) %>
