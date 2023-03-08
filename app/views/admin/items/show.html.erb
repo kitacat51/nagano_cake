@@ -9,14 +9,16 @@
 <%= @item.introduction %>
 
 <p>ジャンル</p>
-<%= @item.genre_id %>
+<%= @item.genre.name %>
 
 <p>税込価格(税抜価格)</p>
 <%= @item.price %>円
 
 <p>販売ステータス</p>
-<%= @item.is_active %>
-<!--販売ステータスがfalseのままになっている-->
-
+         <% if @item.is_active == true %>
+         <%= "販売中" %>
+         <% else %>
+         <%= "販売停止中" %>
+         <% end %>
 
 <%= link_to "編集する",edit_admin_item_path(@item.id) %>
