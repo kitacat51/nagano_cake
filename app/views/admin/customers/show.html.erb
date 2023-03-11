@@ -19,7 +19,8 @@
     <th>メールアドレス</th>
         <%= @customer.email %>
     <th>会員ステータス</th>
-        
+        <%= f.radio_button :is_deleted, :true %>有効
+        <%= f.radio_button :is_deleted, :false %>退会
     <th>
         <%= link_to "編集する",edit_admin_customer_path(@customer.id) %>
     </th>

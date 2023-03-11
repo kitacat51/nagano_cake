@@ -16,7 +16,7 @@ class Admin::CustomersController < ApplicationController
       if @customer.update(customer_params)
          redirect_to admin_customer__path(@customer.id)
       else
-         render :edit_admin_customer_path
+         render :edit
       end
     end
    

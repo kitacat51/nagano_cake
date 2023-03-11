@@ -1,5 +1,5 @@
 <h1>会員一覧</h1>
-
+<table>
   <thead>
     <tr>
        <th>会員ID</th>
@@ -9,8 +9,9 @@
     </tr>
   </thead>
   
+  <tbody>  
   <% @customers.each do |customer| %>
-  <tbody>
+ 
     <tr>
      <td>
          <%= customer.id %>
@@ -23,8 +24,13 @@
          <%= customer.email %>
      </td>
      <td>
-         <%= customer.is_deleted %>
+         <% if customer.is_deleted == true %>
+         <%= "有効" %>
+         <% else %>
+         <%= "退会" %>
+         <% end %>
      </td>
     </tr>
   <% end %>
   </tbody>
+</table>
