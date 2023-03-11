@@ -1,4 +1,4 @@
-<div class="container ">
+<div class="container">
    <div class="row">
       <div class="col-md-3">
       </div>
@@ -7,11 +7,11 @@
         <table class="table">
            <tbody>
               <tr>
-                <td><%= image_tag @item.image %></td>
+                <td><%= image_tag @item.get_image %></td>
                 <td>
                     商品名<%= @item.name %> <br>
                     商品説明<%= @item.introduction %> <br>
-                    ジャンル<%#= @item.genre.name %>  <br>
+                    ジャンル<%= @item.genre.name %>  <br>
                     税込価格(税抜価格)<%= @item.price %>円 <br>
                     販売ステータス
                     <% if @item.is_active == true %>
