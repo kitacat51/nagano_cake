@@ -24,6 +24,7 @@ Rails.application.routes.draw do
      resources :items
   end
 
+    get '/admin' => "admin/homes#top"
   namespace :admin do
     resources :items
     resources :customers
