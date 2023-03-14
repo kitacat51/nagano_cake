@@ -37,7 +37,7 @@
   <div class="field">
     <%= f.label :パスワード %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> 文字以上)</em>
     <% end %>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
@@ -52,5 +52,7 @@
   </div>
 <% end %>
 
-
-<%= render "public/shared/links" %>
+既に登録済みの方
+<%= link_to customer_session_path do %>
+<%= "こちら" %>
+<% end %>からログインしてください。
