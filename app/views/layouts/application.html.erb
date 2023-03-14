@@ -11,13 +11,13 @@
   </head>
 
   <body>
-    <heaer>
-      <% if user_signed_in? %>
+    <heaedr>
+      <% if customer_signed_in? %>
         <li>
           ようこそ、<%= @customer_last_name %>さん!
         </li>
         <li>
-          <%= link_to "マイページ", customer_mypage_path %>
+          <%= link_to "マイページ", show_path(current_customer.id) %>
         </li>
         <li>
           <%= link_to "商品一覧", items_path %>
@@ -26,7 +26,7 @@
           <%= link_to "カート", cart_items_path %>
         </li>
         <li>
-          <%= link_to "ログアウト", destroy_admin_session_path %>
+          <%= link_to "ログアウト", destroy_customer_session_path,method: :delete %>
         </li>
       <% elsif admin_signed_in? %>
        <li>
@@ -58,7 +58,7 @@
          <%= link_to "ログイン", new_customer_session_path %>
        </li>
       <% end %>
-    </heaer>
+    </heaedr>
     <%= yield %>
   </body>
 </html>
