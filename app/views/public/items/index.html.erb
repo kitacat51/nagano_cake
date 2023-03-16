@@ -1,9 +1,10 @@
 <h1>商品一覧</h1>
 
+<table>
 <% @items.each do |item| %>
     <tr>
      <td>
-         <%= item.id %>
+         <%= item.image %>
      </td>
      <td><%= link_to admin_item_path(item.id) do %>
          <%= item.name %>
@@ -14,3 +15,4 @@
      </td>
 
 <% end %>
+</table>
