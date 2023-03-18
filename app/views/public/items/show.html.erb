@@ -9,6 +9,7 @@
                     <%= form_with model: @item,url: '/admin/items' , method: :get do |f| %>
                     <%= f.hidden_field :name, :value => "個数選択" %>
                     <%= f.select :amount, *[1..10] %>
+                    <%= f.submit "カートに" %>
                     <% end %>
                 </td>
               </tr>
