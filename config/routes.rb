@@ -21,9 +21,11 @@ Rails.application.routes.draw do
     resources :addresses
     resources :orders, only: [:show, :index, :new, :create]
     resources :cart_items, only: [:index, :create]
+    resources :items
 
   end
 
+    get '/admin' => "admin/homes#top"
   namespace :admin do
     resources :items
     resources :customers
