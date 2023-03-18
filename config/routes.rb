@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: "homes#top"
     get "/about" =>"homes#about",as: 'about'
-    get "/customers/mypage" =>"customers#mypage",as: 'show'
+    get "/customers/mypage" =>"customers#mypage",as: 'mypage'
     get "/customers/information/edit" =>"customers#information",as: 'edit'
     resources :addresses
     resources :orders, only: [:show, :index, :new, :create]
