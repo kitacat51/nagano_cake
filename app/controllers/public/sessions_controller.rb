@@ -24,4 +24,17 @@ class Public::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  
+  #退会処理
+  protected
+    def customer_state
+      @customer = Customer.find_by(email: params[:customer][:email])
+      return if !@customer
+      if @customer.valid_password?(params[:customer][:password])
+        true && !false
+        redirect_to  new_customer_session_path
+      end
+    end
+
 end
+
