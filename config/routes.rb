@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get "/about" =>"homes#about",as: 'about'
     get "/customers/mypage" =>"customers#mypage",as: 'mypage'
     get "/customers/information/edit" =>"customers#edit",as: 'edit'
+    patch "/customers/information" =>"customers#update",as: 'update'
     resources :addresses
     resources :orders, only: [:show, :index, :new, :create]
     resources :cart_items, only: [:index, :create]

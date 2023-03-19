@@ -1,6 +1,6 @@
 <h1>会員情報編集</h1>
 
- <%= form_with model: @customer,url: edit_path,method: :patch do |f| %>
+ <%= form_with model: @customer,url: update_path,method: :patch do |f| %>
  
    <tr>氏名</tr>
        <%= f.text_field :last_name %>
