@@ -1,14 +1,14 @@
 <thead>
 
 <%= form_with model: @customer,url: admin_customer_path(@customer.id),method: :patch do |f| %>
-<h1><%= customer.last_name %>
-    <%= customer.first_name %>さんの会員情報編集
+<h1><%= @customer.last_name %>
+    <%= @customer.first_name %>さんの会員情報編集
 </h1>
 
 
   <tr>
     <th>会員ID</th>
-        <%= customer.id %>
+        <%= @customer.id %>
     <th>氏名</th>
         <%= f.text_field :last_name %>
         <%= f.text_field :first_name %>

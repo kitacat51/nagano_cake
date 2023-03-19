@@ -1,15 +1,19 @@
-<h1><%= @customer.last_name + first_name %>
+<h1><%= @customer.last_name %>
+    <%= @customer.first_name %>
     さんの会員詳細
 </h1>
 
 <thead>
+<table>
   <tr>
     <th>会員ID</th>
         <%= @customer.id %>
     <th>氏名</th>
-        <%= @customer.last_name + first_name %>
+        <%= @customer.last_name %>
+        <%= @customer.first_name %>
     <th>ﾌﾘｶﾞﾅ</th>
-        <%= @customer.last_name_kana + first_name_kana %>
+        <%= @customer.last_name_kana %>
+        <%= @customer.first_name_kana %>
     <th>郵便番号</th>
         <%= @customer.postal_code %>
     <th>住所</th>
@@ -19,8 +23,11 @@
     <th>メールアドレス</th>
         <%= @customer.email %>
     <th>会員ステータス</th>
-        <%= f.radio_button :is_deleted, :true %>有効
-        <%= f.radio_button :is_deleted, :false %>退会
+        <% if @customer.is_deleted == true %>
+        <%= "有効" %>
+        <% else %>
+        <%= "退会" %>
+        <% end %>
     <th>
         <%= link_to "編集する",edit_admin_customer_path(@customer.id) %>
     </th>
@@ -28,4 +35,5 @@
         <%= link_to "注文履歴一覧を見る",admin_path %>
     </th>
   </tr>
+</table>
 </thead>
