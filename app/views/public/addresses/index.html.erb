@@ -16,6 +16,9 @@
 <% end %>
 
 <table>
+    郵便番号
+    住所
+    宛名
 <% @addresses.each do |address| %>
      <td>
          <%= address.postal_code %>
@@ -23,13 +26,13 @@
      <td>
          <%= address.address %>
      <td>
-         <%= f.text_field :name %>
+         <%= address.name %>
      </td>
-
-<% end %>
-</table>>
-
-<% end %><%= item.price %>
+     <td>
+      <%= link_to "編集する",edit_address_path(@address.id),class:"btn btn-sm btn-success" %>
      </td>
-
+     <td>
+      <%= link_to "削除する",address_path(@address.id),method: :delete, class:"btn btn-sm btn-success" %>
+     </td>
 <% end %>
+</table>
