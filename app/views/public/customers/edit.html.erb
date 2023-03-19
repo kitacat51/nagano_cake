@@ -1,0 +1,29 @@
+<h1>会員情報編集</h1>
+
+ <%= form_with model: @customer,url: edit_path,method: :patch do |f| %>
+ 
+   <tr>氏名</tr>
+       <%= f.text_field :last_name %>
+       <%= f.text_field :first_name %>
+
+   <tr>フリガナ</tr>
+       <%= f.text_field :last_name_kana %>
+       <%= f.text_field :first_name_kana %>
+       
+   <tr>郵便番号</tr>
+       <%= f.text_field :postal_code %>
+       
+   <tr>住所</tr>
+       <%= f.text_field :address %>
+ 
+   <tr>電話番号</tr>
+       <%= f.text_field :telephone_number %>
+       
+   <tr>メールアドレス</tr>
+       <%= f.email_field :email %>
+ 
+   <div class="form-group">
+         <%= f.submit "内容を保存",class:"btn btn-secondary" %>
+   </div>
+   
+   <% end %>
