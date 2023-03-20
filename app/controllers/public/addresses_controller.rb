@@ -1,6 +1,6 @@
 class Public::AddressesController < ApplicationController
     def index
-        @addresses = Addresses.all
+        @addresses = Address.all
     end
     
     def new
@@ -14,7 +14,7 @@ class Public::AddressesController < ApplicationController
     def create
       @address = Address.new(address_params)
       if @address.save
-        redirect_to address_path(@item.id)
+        redirect_to address_path(@address.id)
       else
         @addresses = Address.all
         render :index
@@ -35,6 +35,7 @@ class Public::AddressesController < ApplicationController
         address.destroy
         redirect_to address_path
     end
+    
     
 private
     def address_params
