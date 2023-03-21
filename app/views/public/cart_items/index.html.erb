@@ -4,17 +4,30 @@
 <table> 
   <thead>
       <th>商品名</th>
+      <th></th>
       <th>単価(税込)</th>
       <th>小計</th>
   </thead>
   <tbody>
   <% @cart_items.each do |cart_item| %>
       <tr>
-          <td><%= cart_item.name %></td>
-          <td><%= cart_item.item.with_tax_price%></td>
-          <td><%= cart_item.subtotal %></td>
-          <% @合計金額 +=  (cart_item.item.price * 1.1).floor * cart_item.amount %>
+          <td><%=image_tag cart_item.item.get_image(100,100) %></td>
+          <td><%= cart_item.item.name %></td>
+          <td><%#= cart_item.item.with_tax_price%></td>
+          <td><%# cart_item.subtotal %></td>
+          <!--< @合計金額 +=  (cart_item.item.price * 1.1).floor * cart_item.amount %>-->
       </tr>
   <% end %>
   </tbody>
 </table>
+
+     <td><%= link_to items_path do %>
+          買い物を続ける
+         <% end %>
+     </td>
+     
+    <td><%= link_to new_order_path do %>
+         情報入力
+         <% end %>
+     </td>
+     
