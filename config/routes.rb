@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     patch "/customers/information" =>"customers#update",as: 'update'
     resources :addresses
     resources :orders, only: [:show, :index, :new, :create]
+    post "/orders/confirm" =>"orders#confirm",as: 'confirm'
+    post "/orders/thanks" =>"orders#thanks",as: 'show'
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resources :items
 
