@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     get "/customers/mypage" =>"customers#mypage",as: 'mypage'
     get "/customers/information/edit" =>"customers#edit",as: 'edit'
     patch "/customers/information" =>"customers#update",as: 'update'
+    get "customers/unsubscribe" => "customers#unsubscribe",as: 'unsubscribe'
+    patch "customers/withdrawal" => "customers#withdrawal",as: 'withdrawal'
     resources :addresses
     resources :orders, only: [:show, :index, :new, :create]
     post "/orders/confirm" =>"orders#confirm",as: 'confirm'
