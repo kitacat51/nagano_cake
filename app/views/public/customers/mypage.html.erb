@@ -1,30 +1,48 @@
 <h1>マイページ</h1>
 
-<h2>登録情報</h2> 
-<tr><%= link_to "編集する", edit_path, class:"btn btn-sm btn-success" %></tr>
- 
-<tr>氏名</tr>
-    <%= @customer.last_name %>
-    <%= @customer.first_name %>
-
-<tr>カナ</tr>
-    <%= @customer.last_name_kana %>
-    <%= @customer.first_name_kana %>
-
-<tr>郵便番号</tr>
-    <%= @customer.postal_code %>
-
-<tr>住所</tr>
-    <%= @customer.address %>
-
-<tr>電話番号</tr>
-    <%= @customer.telephone_number %>
-
-<tr>メールアドレス</tr>
-    <%= @customer.email %>
-
+<head>
+  <h2>登録情報</h2> 
+    <tr><%= link_to "編集する", edit_path, class:"btn btn-sm btn-success" %></tr>
+</head>
+<table class="table table-bordered">
+  <tbody>
+   <tr> 
+    <th scope="row">氏名</th>
+       <td><%= @customer.last_name %></td>
+       <td><%= @customer.first_name %></td>
+    </tr> 
+    <tr>
+     <th scope="row">カナ</th>
+      <td><%= @customer.last_name_kana %></td>
+      <td><%= @customer.first_name_kana %></td>
+    </tr> 
+    <tr>
+     <th scope="row">郵便番号</th>
+       <td colspan="2" >
+         <%= @customer.postal_code %></td>
+    </tr>
+    <tr>
+     <th scope="row">住所</th>
+      <td colspan="2">
+        <%= @customer.address %></td>
+    </tr>
+    <tr>
+      <th scope="row">電話番号</th>
+      <td colspan="2">
+       <%= @customer.telephone_number %></td>
+    </tr>
+    <tr>
+      <th scope="row">メールアドレス</th>
+       <td colspan="2">
+        <%= @customer.email %></td>
+    </tr>
     
+  </tbody>    
+</table>
+
+<fotter>
 <tr>配送先</tr>
-    <%#= link_to "一覧を見る", addresses_path %> 
+    <%= link_to "一覧を見る", addresses_path,class:"btn btn-sm btn-primary" %> 
 <tr>注文履歴</tr>
-    <%#= link_to "一覧を見る" orders_path %>
+    <%#= link_to "一覧を見る" orders_path,class:"btn btn-sm btn-primary" %>
+</fotter>
