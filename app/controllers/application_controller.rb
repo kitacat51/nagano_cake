@@ -9,5 +9,8 @@ class ApplicationController < ActionController::Base
      root_path
    end
 
+  def show
+   @customer = current_customer
+  end
 
 end
