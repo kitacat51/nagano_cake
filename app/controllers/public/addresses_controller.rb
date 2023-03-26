@@ -1,6 +1,7 @@
 class Public::AddressesController < ApplicationController
     def index
         @addresses = Address.all
+        @address = Address.new
     end
     
     def new
@@ -14,7 +15,7 @@ class Public::AddressesController < ApplicationController
     def create
       @address = Address.new(address_params)
       if @address.save
-        redirect_to address_path(@address.id)
+        redirect_to addresses_path
       else
         @addresses = Address.all
         render :index
@@ -39,6 +40,6 @@ class Public::AddressesController < ApplicationController
     
 private
     def address_params
-      params.require(:address).permit(:postal_code, :address, :name )
+      params.require(:address).permit(:postal_code, :address, :name)
     end
 end
