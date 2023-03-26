@@ -20,28 +20,28 @@
           <td><%= cart_item.item.with_tax_price%></td>
           <%= form_with model: cart_item,url: cart_item_path(cart_item.id) , method: :patch do |f| %>
           <td><%= f.select :amount, *[1..10]  %></td>
-          <td><%= f.submit '更新' %></td>
+          <td><%= f.submit '変更',class:"btn btn-success" %></td>
           <% end %>
           <td><%= cart_item.subtotal %></td>
-          <td><%= link_to "削除する", cart_item_path(cart_item.id),method: :delete %>
+          <td><%= link_to "削除する", cart_item_path(cart_item.id),method: :delete,class:"btn btn-danger" %>
           </td>
           <% @total_payment += cart_item.subtotal %>
       </tr>
   <% end %>
   <tr>
-    <td><%= @total_payment %>
+    <td>合計金額：<%= @total_payment %>
     </td>
   </tr>
   </tbody>
 </table>
 
      <td><%= link_to items_path do %>
-          買い物を続ける
+         <button type="button" class="btn btn-primary">買い物を続ける</button>
          <% end %>
      </td>
      
     <td><%= link_to new_order_path do %>
-         情報入力に進む
+        <button type="button" class="btn btn-success">情報入力に進む</button>
          <% end %>
      </td>
      
