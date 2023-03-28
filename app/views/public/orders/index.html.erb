@@ -1,0 +1,33 @@
+<h1>注文履歴一覧</h1>
+<table>
+    <thead>
+        <tr>
+         <th>注文日</th>
+         <th>配送先</th>
+         <th>注文商品</th>
+         <th>支払金額</th>
+         <th>ステータス</th>
+         <th>注文詳細</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @orders.each do |order| %>
+     <tr>
+       <td></td>
+       <td><%= order.postal_code %><br>
+           <%= order.address %><br>
+           <%= order.name %>
+       </td>
+       <td><%= order.cart_items %></td>
+       <td><%= order.total_payment %></td>
+       <td><%= order.status %></td>
+       <td><%= link_to order_path(order.id) do %>
+           <button type="button" class="btn btn-success">表示する</button>
+           <% end %>
+       </td>
+     </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<!--この書き方だと、注文したあと、カートアイテムは全部消去されるので正しくない。やりなおし3/-->

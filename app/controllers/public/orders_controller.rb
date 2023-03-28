@@ -11,7 +11,7 @@ class Public::OrdersController < ApplicationController
         if params[:order][:address_number] == "0"
           @order.postal_code = current_customer.postal_code
           @order.address = current_customer.address
- 　        @order.name = current_customer.first_name + current_customer.last_name
+          @order.name = current_customer.first_name + current_customer.last_name
         elsif params[:order][:address_number] == "1"
           # @addresses = Address.all
           @address = Address.find(params[:order][:address_id])
@@ -26,16 +26,24 @@ class Public::OrdersController < ApplicationController
         
         @cart_items = current_customer.cart_items
         @total_payment = 0
+        @shopping_cost = 800
     end
     
     def show
       @order = Order.find(params[:id])
+      @cart_items = current_customer.cart_items
+      @total_payment = 0
     end
     
     def create
       @order = Order.new(order_params)
+      @order.customer_id = current_customer.id
       @order.save
-      redirect_to confirm_path
+      redirect_to thanks_path
+    end
+    
+    def thanks
+      
     end
     
     def index
@@ -44,7 +52,7 @@ class Public::OrdersController < ApplicationController
     
 private
   def order_params
-      params.require(:order).permit(:postal_code, :address, :name, :payment_method, :status)
+      params.require(:order).permit(:postal_code, :address, :name, :payment_method, :shopping_cost, :total_payment )
   end
     
 end

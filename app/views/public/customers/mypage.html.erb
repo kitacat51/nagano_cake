@@ -41,8 +41,10 @@
 </table>
 
 <fotter>
-<tr>配送先</tr>
+  <tr>配送先
     <%= link_to "一覧を見る", addresses_path,class:"btn btn-sm btn-primary" %> 
-<tr>注文履歴</tr>
-    <%#= link_to "一覧を見る" orders_path(),class:"btn btn-sm btn-primary" %>
+  </tr>
+  <tr>注文履歴
+    <%= link_to "一覧を見る", orders_path,class:"btn btn-sm btn-primary" %>
+    </tr>
 </fotter>
