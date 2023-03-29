@@ -31,8 +31,10 @@ class Public::OrdersController < ApplicationController
     
     def show
       @order = Order.find(params[:id])
+      # @order = current_customer.orders.find(params[:id])
       @cart_items = current_customer.cart_items
       @total_payment = 0
+      @shopping_cost = 800
     end
     
     def create
@@ -47,12 +49,18 @@ class Public::OrdersController < ApplicationController
     end
     
     def index
-      @orders = Order.all
+      @orders = current_customer.orders
     end
     
 private
   def order_params
       params.require(:order).permit(:postal_code, :address, :name, :payment_method, :shopping_cost, :total_payment )
+  end
+ 
+  #注文詳細と注文履歴一覧に使う？
+  def order_details_params
+      params.require(:order_details).permit(:order_id, :item_id, :price, :amount)
+
   end
     
 end
