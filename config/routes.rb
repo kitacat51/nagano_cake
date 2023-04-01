@@ -23,9 +23,9 @@ Rails.application.routes.draw do
     get "customers/unsubscribe" => "customers#unsubscribe",as: 'unsubscribe'
     patch "customers/withdrawal" => "customers#withdrawal",as: 'withdrawal'
     resources :addresses
+    get "/orders/thanks" =>"orders#thanks",as: 'thanks'
     resources :orders, only: [:show, :index, :new, :create]
     post "/orders/confirm" =>"orders#confirm",as: 'confirm'
-    get "/orders/thanks" =>"orders#thanks",as: 'thanks'
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resources :items
 

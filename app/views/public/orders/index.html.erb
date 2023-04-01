@@ -13,12 +13,14 @@
     <tbody>
     <% @orders.each do |order| %>
      <tr>
-       <td></td>
+       <td><%= order.created_at.strftime('%Y/%m/%d') %></td>
        <td><%= order.postal_code %><br>
            <%= order.address %><br>
            <%= order.name %>
        </td>
-       <td><%= order.cart_items %></td>
+       <% order.order_details.each do |order_detail| %>
+       <td><%= order_detail.item.name %></td>
+       <% end %>
        <td><%= order.total_payment %></td>
        <td><%= order.status %></td>
        <td><%= link_to order_path(order.id) do %>
