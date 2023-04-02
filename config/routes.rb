@@ -39,7 +39,7 @@ Rails.application.routes.draw do
     resources :homes
     resources :genres
     resources :orders
-    resources :orders_details
+    resources :order_details
   end
 
 end
