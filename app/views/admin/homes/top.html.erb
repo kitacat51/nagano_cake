@@ -11,21 +11,22 @@
   </thead>
   
   <tbody>  
-  <%= @orders.each do |order| %>
+  <% @orders.each do |order| %>
 
     <tr>
       <td><%= link_to admin_order_path(order.id) do %>
-          <%= order.created_at %>
+          <%= order.created_at.strftime('%Y/%m/%d') %>
           <% end %>
       </td>
       <td>
-          <%= order.customer_id %>
+          <%= order.customer.last_name %>
+          <%= order.customer.first_name %>
       </td>
       <td>
-          <%= order_details.amount %>
+          <%= order.order_details.sum(:amount) %>
       </td>
       <td>
-          <%= order_status %>
+          <%= order.status %>
       </td>
     </tr>
   </tbody>

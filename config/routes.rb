@@ -38,8 +38,8 @@ Rails.application.routes.draw do
     resources :customers
     resources :homes
     resources :genres
-    resources :oeders
-    resources :oeders_details
+    resources :orders
+    resources :orders_details
   end
 
 end
