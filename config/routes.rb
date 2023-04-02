@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
     get '/admin' => "admin/homes#top"
   namespace :admin do
+
     resources :items
     resources :customers
     resources :homes

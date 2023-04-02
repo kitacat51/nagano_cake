@@ -38,7 +38,7 @@
         
         </table>
       <h2>支払方法</h2>
-      <%= @order.payment_method %>
+      <%= @order.payment_method_i18n %>
       
       <h2>お届け先</h2>
       <%= @order.postal_code %>
@@ -52,5 +52,5 @@
         <%= f.hidden_field :payment_method, :value => @order.payment_method %>
         <%= f.hidden_field :shopping_cost, :value => @shopping_cost %>
         <%= f.hidden_field :total_payment, :value => @total_payment %>
-        <%= f.submit "注文を確定する",class:"btn btn-primary" %>
+        <%= f.submit "注文を確定する",class:"btn btn-success" %>
       <% end %>

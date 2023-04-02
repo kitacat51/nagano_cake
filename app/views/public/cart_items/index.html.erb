@@ -1,6 +1,5 @@
 <h1>ショッピングカート</h1>
 
-<td></td>
 <table> 
   <thead>
       <th>商品名</th>
@@ -12,8 +11,6 @@
   </thead>
   <tbody>
   <% @cart_items.each do |cart_item| %>
- 
-  
       <tr>
           <td><%=image_tag cart_item.item.get_image(100,100) %></td>
           <td><%= cart_item.item.name %></td>
@@ -40,8 +37,6 @@
          <% end %>
      </td>
      
-    <td><%= link_to new_order_path do %>
+        <%= link_to new_order_path do %>
         <button type="button" class="btn btn-success">情報入力に進む</button>
-         <% end %>
-     </td>
-     
+        <% end %>

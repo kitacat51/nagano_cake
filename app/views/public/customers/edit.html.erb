@@ -1,32 +1,44 @@
 <h1>会員情報編集</h1>
 
+<table>
  <%= form_with model: @customer,url: update_path,method: :patch do |f| %>
  
-   <tr>氏名</tr>
-       <%= f.text_field :last_name %>
-       <%= f.text_field :first_name %>
-
-   <tr>フリガナ</tr>
-       <%= f.text_field :last_name_kana %>
-       <%= f.text_field :first_name_kana %>
-       
-   <tr>郵便番号</tr>
-       <%= f.text_field :postal_code %>
-       
-   <tr>住所</tr>
-       <%= f.text_field :address %>
- 
-   <tr>電話番号</tr>
-       <%= f.text_field :telephone_number %>
-       
-   <tr>メールアドレス</tr>
-       <%= f.email_field :email %>
- 
+   <tr>
+    <th>氏名</th>
+       <td><%= f.text_field :last_name %>
+           <%= f.text_field :first_name %>
+       </td>
+   </tr>
+   <tr>
+    <th>フリガナ</th>
+       <td><%= f.text_field :last_name_kana %>
+           <%= f.text_field :first_name_kana %>
+       </td>
+   </tr>    
+   <tr>
+    <th>郵便番号</th>
+       <td><%= f.text_field :postal_code %></td>
+   </tr>    
+   <tr>
+     <th>住所</th>
+       <td><%= f.text_field :address %></td>
+   </tr>
+   <tr>
+     <th>電話番号</th>
+       <td><%= f.text_field :telephone_number %></td>
+   </tr>    
+   <tr>
+    <th>メールアドレス</th>
+       <td><%= f.email_field :email %></td>
+   </tr>
+   <th></th>
+   <td>
    <div class="form-group">
-         <%= f.submit "内容を保存",class:"btn btn-secondary" %>
+         <%= f.submit "編集内容を保存",class:"btn btn-success" %>
    </div>
-   
-   <% end %>
-   
+   </td>
    <td><%= link_to "退会する", unsubscribe_path,method: :get,class:"btn btn-danger" %>
    </td>
+   <% end %>
+</table>   
+   
