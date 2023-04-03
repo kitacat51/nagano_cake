@@ -16,6 +16,21 @@ class Public::CustomersController < ApplicationController
            render :edit
         end
     end
+    
+    def unsubscribe
+       @customer = current_customer
+    end
+
+    def withdrawal
+       @customer = current_customer
+        if @customer.update(is_deleted: true)
+           reset_session
+           redirect_to root_path
+        else
+           redirect_to unsubscribe_path
+        end
+    end
+    
         
 private
    def customer_params
