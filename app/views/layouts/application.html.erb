@@ -27,7 +27,7 @@
            <ul class="navbar-nav ml-auto">
                <% if customer_signed_in? %>
                  <li>
-                  ようこそ、<%= @current_customer_last_name %>さん!
+                  ようこそ、<%= current_customer.last_name %>さん!
                  </li>
                  <li>
                   <button type="button" class="btn btn-outline-secondary">
