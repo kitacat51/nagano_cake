@@ -6,11 +6,12 @@
     購入には会員登録が必要になります。
 </h1>
 
-<table>
-    <tr>
-        <th>新着商品</th>
-        <td>
+<div class="container">
+  <th>新着商品</th>
+  <div class="row">
+   <table>
          <% @items.each do |item| %>
+         <div class="col-md-4">
          <tr>
            <td>
             <%= image_tag item.get_image(100,100) %>
@@ -23,7 +24,8 @@
            <%= item.price %>
            </td>
          </tr>
+         </div>
          <% end %>
-       </td>
-    </tr>
-</table>
+   </table>
+   </div>
+</div>
