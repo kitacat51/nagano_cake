@@ -1,4 +1,5 @@
-<h1>マイページ</h1>
+<div class="container ">
+<h3>マイページ</h3>
 
 <head>
 　<tr>
@@ -6,32 +7,32 @@
     <%= link_to "編集する", edit_path, class:"btn btn-sm btn-success" %>
   </tr>
 </head>
-<table>
+<table class="table table-bordered">
   <tbody>
    <tr> 
-     <th>氏名</th>
+     <th scope="row">氏名</th>
        <td><%= @customer.last_name %></td>
        <td><%= @customer.first_name %></td>
    </tr> 
     <tr>
-     <th>カナ</th>
+     <th scope="row">カナ</th>
       <td><%= @customer.last_name_kana %></td>
       <td><%= @customer.first_name_kana %></td>
     </tr> 
     <tr>
-     <th>郵便番号</th>
+     <th scope="row">郵便番号</th>
        <td><%= @customer.postal_code %></td>
     </tr>
     <tr>
-     <th>住所</th>
+     <th scope="row">住所</th>
       <td><%= @customer.address %></td>
     </tr>
     <tr>
-      <th>電話番号</th>
+      <th scope="row">電話番号</th>
       <td><%= @customer.telephone_number %></td>
     </tr>
     <tr>
-      <th>メールアドレス</th>
+      <th scope="row">メールアドレス</th>
       <td><%= @customer.email %></td>
     </tr>
     
@@ -47,3 +48,4 @@
     <th>注文履歴 </th>
     <td><%= link_to "一覧を見る", orders_path,class:"btn btn-sm btn-primary" %></td>
   </tr>
+</div>
