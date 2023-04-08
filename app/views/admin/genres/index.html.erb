@@ -1,4 +1,5 @@
-<h1>ジャンル一覧・追加</h1>
+<div class="container">
+<h3>ジャンル一覧・追加</h3>
 
 <%= form_with model: @genre,url:'/admin/genres',method: :post do |f| %>
  <th>ジャンル名</th>
@@ -23,3 +24,4 @@
    <% end %>
  </tbody>
 </table>
+</div>
