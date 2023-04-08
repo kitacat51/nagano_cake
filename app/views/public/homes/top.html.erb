@@ -14,10 +14,11 @@
    <div class="row">
          <% @items.each do |item| %>
             <div class="col-md-3">
-            <p><%= image_tag item.get_image(200,200) %></p>
             <p><%= link_to item_path(item.id) do %>
-               <%= item.name %>
+               <%= image_tag item.get_image(200,200) %>
                <% end %>
+            </p>
+            <p><%= item.name %>
             </p>
             <p>￥<%= item.price %></p>
             </div>

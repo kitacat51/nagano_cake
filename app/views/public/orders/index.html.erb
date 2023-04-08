@@ -19,9 +19,11 @@
            <%= order.address %><br>
            <%= order.name %>
        </td>
+       <td>
        <% order.order_details.each do |order_detail| %>
-       <td><%= order_detail.item.name %></td>
+       <%= order_detail.item.name %>
        <% end %>
+       </td>
        <td><%= order.total_payment %></td>
        <td><%= order.status_i18n %></td>
        <td><%= link_to order_path(order.id) do %>

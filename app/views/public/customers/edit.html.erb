@@ -1,8 +1,8 @@
 <div class="container">
   <h3>会員情報編集</h3>
-
+  
+  <%= form_with model: @customer,url: update_path,method: :patch do |f| %>
   <table>
-   <%= form_with model: @customer,url: update_path,method: :patch do |f| %>
  
      <tr>
       <th>氏名</th>
@@ -40,6 +40,6 @@
      </td>
      <td><%= link_to "退会する", unsubscribe_path,method: :get,class:"btn btn-danger" %>
      </td>
-     <% end %>
-  </table>   
+  </table>
+  <% end %>
 </div>   

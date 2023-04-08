@@ -27,7 +27,7 @@ class Public::CustomersController < ApplicationController
            reset_session
            redirect_to root_path
         else
-           redirect_to unsubscribe_path
+           redirect_to mypage_path
         end
     end
     
